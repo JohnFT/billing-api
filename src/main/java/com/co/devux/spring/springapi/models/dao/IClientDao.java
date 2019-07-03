@@ -1,8 +1,6 @@
 package com.co.devux.spring.springapi.models.dao;
 
 import com.co.devux.spring.springapi.models.entity.Client;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Optional;
-
-public interface IClientDao extends CrudRepository<Client, Long> {}
+public interface IClientDao extends JpaRepository<Client, Long> {}
