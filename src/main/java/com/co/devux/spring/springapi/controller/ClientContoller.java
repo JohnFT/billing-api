@@ -1,6 +1,7 @@
 package com.co.devux.spring.springapi.controller;
 
 import com.co.devux.spring.springapi.models.entity.Client;
+import com.co.devux.spring.springapi.models.entity.Region;
 import com.co.devux.spring.springapi.models.services.IClientService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -105,5 +106,13 @@ public class ClientContoller {
     public ResponseEntity<Resource> getImage(@PathVariable  String avatar){
     return  this.service.getImage(avatar);
     }
+
+
+
+    @GetMapping("/clients/regions")
+    public List<Region> getAllRegions(){
+        return  this.service.getAllRegions();
+    }
+
 
 }

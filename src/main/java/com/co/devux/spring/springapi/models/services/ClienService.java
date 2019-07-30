@@ -2,6 +2,7 @@ package com.co.devux.spring.springapi.models.services;
 
 import com.co.devux.spring.springapi.models.dao.IClientDao;
 import com.co.devux.spring.springapi.models.entity.Client;
+import com.co.devux.spring.springapi.models.entity.Region;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -155,6 +156,7 @@ public class ClienService implements  IClientService {
             cli.setEmail(client.getEmail());
             cli.setFirstName(client.getFirstName());
             cli.setLastName(client.getLastName());
+            cli.setRegion(client.getRegion());
             this.clientDao.save(cli);
 
             return new ResponseEntity<Client>(cli, HttpStatus.CREATED);
@@ -253,4 +255,10 @@ public class ClienService implements  IClientService {
 
     }
 
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Region> getAllRegions() {
+        return this.clientDao.getAllRegions();
+    }
 }

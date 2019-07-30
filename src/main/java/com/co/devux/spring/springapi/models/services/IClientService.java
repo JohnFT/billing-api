@@ -1,6 +1,7 @@
 package com.co.devux.spring.springapi.models.services;
 
 import com.co.devux.spring.springapi.models.entity.Client;
+import com.co.devux.spring.springapi.models.entity.Region;
 import org.springframework.core.io.Resource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -26,4 +27,6 @@ public interface IClientService {
     public ResponseEntity<?> upload(MultipartFile file, Long id);
 
     public ResponseEntity<Resource> getImage(String avatar);
+
+    public List<Region> getAllRegions ();
 }
